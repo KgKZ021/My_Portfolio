@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animated Navbar with Theme Switch</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="dark-theme section">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg px-3">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">🎮 My Portfolio</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#fancyNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="fancyNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#academics">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#favourites">Hobbies</a>
+            </li>
+            <li class="nav-item theme-switch ps-3">
+              <label class="form-check-label text-light" for="themeToggle">🌙</label>
+              <input class="form-check-input" type="checkbox" id="themeToggle" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section
+        id="home"
+        class="home-section section d-flex align-items-center justify-content-center"
+      >
+        <div class="section-wrapper home-content text-center">
+          <h1 class="intro-title">
+            Hey, I'm <span class="highlight">Kaung Khant Zaw</span>
+          </h1>
+          <p class="intro-subtitle">A Passionate Web Developer & Designer</p>
+          <button
+            id="scrollDown"
+            class="scroll-btn mt-4 animate__animated animate__bounce animate__infinite"
+          >
+            ↓ Scroll Down
+          </button>
+          <div class="animated-shapes">
+            <div class="circle animate__animated animate__pulse animate__infinite"></div>
+            <div
+              class="triangle animate__animated animate__fadeInDown animate__slower animate__infinite"
+            ></div>
+            <div
+              class="square animate__animated animate__rotateIn animate__slower animate__infinite"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="about-section section d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="section-wrapper about-content text-center animate__animated animate__fadeInUp"
+        >
+          <h2 class="section-title">About Me</h2>
+          <p class="section-description">
+            Hi! I’m currently studying Computer Science (BSc) at the University
+            of Debrecen. I’m really passionate about game development and
+            programming, and I love bringing ideas to life through code.
+            Whether it’s creating gameplay mechanics, working on 3D
+            environments, or just learning something new, I’m always excited to
+            dive into the world of tech and games.
+          </p>
+          <div class="animated-decor">
+            <div class="decor-circle"></div>
+            <div class="decor-wave"></div>
+            <div class="decor-glow"></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        class="projects-section section py-5 text-center"
+      >
+        <div class="section-wrapper container">
+          <h2 class="section-title mb-4">My Projects</h2>
+          <p class="section-description mb-5">
+            Explore some of my work with previews and GitHub links.
+          </p>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="project-card shadow-lg rounded overflow-hidden animate__animated">
+                <video autoplay muted loop playsinline class="w-100 media-thumb">
+                  <source src="Resources/CooKitchen.mov" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div class="project-body p-3">
+                  <h5 class="fw-bold">CooKitchen</h5>
+                  <p class="small">
+                    A pet project on creating 3D game with Unity. Heavily
+                    inspired by Code Monkey.
+                  </p>
+                  <a
+                    href="https://github.com/KgKZ021/CooKitchen.git"
+                    target="_blank"
+                    class="btn btn-outline-info btn-sm mt-2"
+                    >View on GitHub</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="project-card shadow-lg rounded overflow-hidden animate__animated">
+                <div class="project-media media-thumb">
+                  <img
+                    src="Resources/JiraApp.png"
+                    alt="Custom Field Statistics Forge App"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="project-body p-3">
+                  <h5 class="fw-bold">Custom Field Statistics Forge App</h5>
+                  <p class="small">
+                    A team project on course work. A Jira Forge App enhancing
+                    custom fields on a per-project basis.
+                  </p>
+                  <a
+                    href="https://github.com/DO8FEC/Forge-Custom-Field-Statistics.git"
+                    target="_blank"
+                    class="btn btn-outline-info btn-sm mt-2"
+                    >View on GitHub</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="project-card shadow-lg rounded overflow-hidden animate__animated">
+                <div class="project-media">
+                  <video autoplay muted loop playsinline class="w-100 media-thumb">
+                    <source src="Resources/RLProj.mov" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="project-body p-3">
+                  <h5 class="fw-bold">Shield Wizard</h5>
+                  <p class="small">
+                    A course work project on reinforcement learning. Training
+                    the agent to shield and counter attack the wizard.
+                  </p>
+                  <a
+                    href="https://github.com/Hosy-dotcom/ShieldWizard.git"
+                    target="_blank"
+                    class="btn btn-outline-info btn-sm mt-2"
+                    >View on GitHub</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="academics"
+        class="academics-section section py-5 text-center"
+      >
+        <div class="section-wrapper container">
+          <h2 class="section-title mb-4">Academic Journey</h2>
+          <p class="section-description mb-5">
+            Here’s how I evolved from a curious student to a passionate
+            developer.
+          </p>
+          <div class="timeline">
+            <div
+              class="timeline-item animate__animated"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              title="Gained all necessary fundamentals of computer science"
+            >
+              <div class="timeline-dot media-thumb">
+                <i class="bi bi-mortarboard-fill svg-icon"></i>
+              </div>
+              <div class="timeline-content">
+                <h5 class="fw-bold">Bachelor's in Computer Science</h5>
+                <p class="small">
+                  University of Information and Technology Yangon (2018 - 2022)
+                </p>
+                <p class="">
+                  Focused on fundamentals of Computer Science and Programming,
+                  Physics, Mathematics and Electronics
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="timeline-item animate__animated"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              title="Joined University of debrecen and actively learning"
+            >
+              <div class="timeline-dot media-thumb">
+                <i class="bi bi-briefcase-fill svg-icon"></i>
+              </div>
+              <div class="timeline-content">
+                <h5 class="fw-bold">Bachelor's in Science (Computer Science)</h5>
+                <p class="small">University of Debrecen(2022 - Current)</p>
+                <p class="">
+                  Actively learning programming and software development.
+                  Participated in coding events, interned, and built various
+                  mini-projects.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="timeline-item animate__animated"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              title="Fantasia: Developing in Unity using C#,incremental mechanics"
+            >
+              <div class="timeline-dot media-thumb">
+                <i class="bi bi-controller svg-icon"></i>
+              </div>
+              <div class="timeline-content">
+                <h5 class="fw-bold">Thesis Project : Fantasia</h5>
+                <p class="small">Final Year</p>
+                <p class="">
+                  Creating a 3D fantasy themed idle game with time loop
+                  mechanics, and Unity engine.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="favourites"
+        class="favourites-section section py-5 text-center parallax-section"
+      >
+        <div class="section-wrapper container position-relative z-1">
+          <h2 class="section-title mb-4">My Favourites</h2>
+          <p class="section-description mb-5">
+            Things I love to do in my free time!
+          </p>
+          <div class="row justify-content-center g-4">
+            <div class="col-md-3">
+              <div
+                class="favourite-card p-4 rounded shadow-lg animate__animated animate__zoomIn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="I create 2D/3D games using Unity and C#!"
+              >
+                <div class="media-thumb mb-3">
+                  <i class="bi bi-controller svg-icon"></i>
+                </div>
+                <h5 class="fw-bold">Game Development</h5>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div
+                class="favourite-card p-4 rounded shadow-lg animate__animated animate__zoomIn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Books and online articles are my go-to!"
+              >
+                <div class="media-thumb mb-3">
+                  <i class="bi bi-book svg-icon"></i>
+                </div>
+                <h5 class="fw-bold">Reading</h5>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div
+                class="favourite-card p-4 rounded shadow-lg animate__animated animate__zoomIn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="I love exploring immersive game worlds."
+              >
+                <div class="media-thumb mb-3">
+                  <i class="bi bi-joystick svg-icon"></i>
+                </div>
+                <h5 class="fw-bold">Video Games</h5>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div
+                class="favourite-card p-4 rounded shadow-lg animate__animated animate__zoomIn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Exploring new cultures & places."
+              >
+                <div class="media-thumb mb-3">
+                  <i class="bi bi-geo-alt-fill svg-icon"></i>
+                </div>
+                <h5 class="fw-bold">Travelling</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer py-4 px-3 mt-auto bg-dark text-light">
+      <div
+        class="container d-flex flex-column flex-md-row justify-content-between align-items-center"
+      >
+        <div class="footer-left mb-3 mb-md-0">
+          <p class="mb-1">
+            &copy; <span id="footer-year"></span> Kaung Khant Zaw. All rights
+            reserved.
+          </p>
+          <p class="small">Built with 💻 and ☕</p>
+        </div>
+        <div class="footer-center mb-3 mb-md-0">
+          <a
+            href="mailto:kaungkhantzaw011@gmail.com"
+            class="text-light me-3"
+            data-bs-toggle="tooltip"
+            title="Email"
+          >
+            <i class="bi bi-envelope-fill"></i>
+          </a>
+          <a
+            href="https://github.com/KgKZ021"
+            class="text-light me-3"
+            data-bs-toggle="tooltip"
+            title="GitHub"
+          >
+            <i class="bi bi-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kaung-khant-zaw021"
+            class="text-light"
+            data-bs-toggle="tooltip"
+            title="LinkedIn"
+          >
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
+        <div class="footer-right">
+          <button
+            id="backToTop"
+            class="btn btn-outline-light btn-sm"
+            data-bs-toggle="tooltip"
+            title="Back to top"
+          >
+            <i class="bi bi-arrow-up-circle-fill"></i>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
