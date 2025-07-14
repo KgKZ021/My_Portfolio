@@ -111,14 +111,39 @@
         id="projects"
         class="projects-section section py-5 text-center"
       >
+      
         <div class="section-wrapper container">
           <h2 class="section-title mb-4">My Projects</h2>
           <p class="section-description mb-5">
             Explore some of my work with previews and GitHub links.
           </p>
+
           <div class="row g-4">
-            <div class="col-md-4">
-              <div class="project-card shadow-lg rounded overflow-hidden animate__animated">
+
+            <div class="col-md-4 d-flex">
+              <div class="project-card shadow-lg rounded overflow-hidden animate__animated h-100 d-flex flex-column">
+                <video autoplay muted loop playsinline class="w-100 media-thumb">
+                  <source src="Resources/Fantasia.mov" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div class="project-body p-3">
+                  <h5 class="fw-bold">Fantasia</h5>
+                  <p class="small">
+                    A unity project on a rogue-like idle game.
+                    Also a thesis project for my course work.
+                  </p>
+                  <a
+                    href="https://github.com/KgKZ021/Fantasia.git"
+                    target="_blank"
+                    class="btn btn-outline-info btn-sm mt-2"
+                    >View on GitHub</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 d-flex">
+              <div class="project-card shadow-lg rounded overflow-hidden animate__animated h-100 d-flex flex-column">
                 <video autoplay muted loop playsinline class="w-100 media-thumb">
                   <source src="Resources/CooKitchen.mov" type="video/mp4" />
                   Your browser does not support the video tag.
@@ -139,8 +164,8 @@
               </div>
             </div>
 
-            <div class="col-md-4">
-              <div class="project-card shadow-lg rounded overflow-hidden animate__animated">
+            <div class="col-md-4 d-flex">
+              <div class="project-card shadow-lg rounded overflow-hidden animate__animated h-100 d-flex flex-column">
                 <div class="project-media media-thumb">
                   <img
                     src="Resources/JiraApp.png"
@@ -164,8 +189,8 @@
               </div>
             </div>
 
-            <div class="col-md-4">
-              <div class="project-card shadow-lg rounded overflow-hidden animate__animated">
+            <div class="col-md-4 d-flex">
+              <div class="project-card shadow-lg rounded overflow-hidden animate__animated h-100 d-flex flex-column">
                 <div class="project-media">
                   <video autoplay muted loop playsinline class="w-100 media-thumb">
                     <source src="Resources/RLProj.mov" type="video/mp4" />
@@ -285,7 +310,7 @@
                 <div class="media-thumb mb-3">
                   <i class="bi bi-controller svg-icon"></i>
                 </div>
-                <h5 class="fw-bold">Game Development</h5>
+                <h5 class="fw-bold no-wrap text-truncate">Game Development</h5>
               </div>
             </div>
 
