@@ -1,0 +1,87 @@
+// ==========================================
+// Footer SCSS - Cyber Terminal Footer
+// ==========================================
+
+.footer-cyber {
+  background: rgba(8, 10, 15, 0.95);
+  border-top: $hud-border;
+  padding: 3rem 1.5rem;
+  position: relative;
+  z-index: 2;
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-brand {
+      h3 {
+        font-family: $font-hud;
+        font-size: 1.25rem;
+        color: $text-bright;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-family: $font-tech;
+        color: $text-muted;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+
+      a {
+        width: 40px;
+        height: 40px;
+        background: rgba($cyan-primary, 0.08);
+        border: 1px solid rgba($cyan-primary, 0.3);
+        color: $cyan-primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        transition: all $transition-fast;
+        text-decoration: none;
+
+        &:hover {
+          background: $cyan-primary;
+          color: $bg-dark;
+          box-shadow: 0 0 15px $cyan-primary;
+          transform: translateY(-3px);
+        }
+      }
+    }
+
+    .footer-actions {
+      button {
+        font-family: $font-tech;
+        background: transparent;
+        border: 1px solid $neon-green;
+        color: $neon-green;
+        padding: 0.5rem 1rem;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: all $transition-fast;
+
+        &:hover {
+          background: $neon-green;
+          color: $bg-dark;
+          box-shadow: 0 0 15px $neon-green;
+        }
+      }
+    }
+  }
+}

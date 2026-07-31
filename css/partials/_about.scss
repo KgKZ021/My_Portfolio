@@ -1,0 +1,74 @@
+// ==========================================
+// About Section SCSS - Player Profile HUD
+// ==========================================
+
+.about-section {
+  .player-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .player-avatar-hud {
+    position: relative;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba($cyan-primary, 0.03);
+    border: $hud-border;
+    border-radius: 4px;
+
+    .avatar-icon {
+      font-size: 5rem;
+      color: $cyan-primary;
+      filter: drop-shadow(0 0 15px $cyan-primary);
+    }
+
+    .player-level {
+      font-family: $font-hud;
+      font-size: 0.9rem;
+      color: $neon-green;
+      margin-top: 1rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  .player-bio {
+    .bio-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: $text-main;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-attributes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+
+      .attribute-box {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba($cyan-primary, 0.2);
+        padding: 0.8rem 1rem;
+        border-radius: 2px;
+
+        .attr-label {
+          font-family: $font-tech;
+          font-size: 0.85rem;
+          color: $text-muted;
+          text-transform: uppercase;
+        }
+
+        .attr-val {
+          font-family: $font-hud;
+          font-size: 1.1rem;
+          color: $cyan-primary;
+        }
+      }
+    }
+  }
+}

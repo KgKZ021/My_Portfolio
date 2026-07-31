@@ -1,0 +1,54 @@
+// ==========================================
+// Education & Academics SCSS
+// ==========================================
+
+.education-section {
+  .education-card {
+    height: 100%;
+    background: $bg-card;
+    border: $hud-border;
+    border-radius: 4px;
+    padding: 2rem;
+    position: relative;
+    transition: all $transition-smooth;
+
+    &:hover {
+      border-color: $cyan-primary;
+      box-shadow: 0 0 25px rgba($cyan-primary, 0.2);
+    }
+
+    .edu-icon {
+      font-size: 2.5rem;
+      color: $cyan-primary;
+      margin-bottom: 1rem;
+    }
+
+    .edu-degree {
+      font-size: 1.25rem;
+      color: $text-bright;
+      margin-bottom: 0.5rem;
+    }
+
+    .edu-institution {
+      font-family: $font-tech;
+      font-size: 1.05rem;
+      color: $neon-green;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .edu-period {
+      font-family: $font-tech;
+      font-size: 0.85rem;
+      color: $text-muted;
+      margin-bottom: 1rem;
+    }
+
+    .coursework-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+  }
+}

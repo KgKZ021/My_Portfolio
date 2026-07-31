@@ -1,0 +1,88 @@
+// ==========================================
+// Hero Section SCSS - Main Title & Typewriter
+// ==========================================
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-subtitle-top {
+    font-family: $font-tech;
+    font-size: 1.1rem;
+    letter-spacing: 2.5px;
+    color: $cyan-primary;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    color: $text-bright;
+
+    .name-gradient {
+      background: linear-gradient(135deg, $cyan-primary, $neon-green);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 15px rgba($cyan-primary, 0.4));
+    }
+  }
+
+  .typing-container {
+    font-family: $font-hud;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    color: $neon-green;
+    min-height: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba($neon-green, 0.5);
+
+    .typing-cursor {
+      animation: blink 0.7s infinite;
+      color: $cyan-primary;
+      margin-left: 2px;
+    }
+  }
+
+  .hero-quick-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+
+    .info-item {
+      font-family: $font-tech;
+      font-size: 1rem;
+      color: $text-muted;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      i {
+        color: $cyan-primary;
+      }
+    }
+  }
+
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+}

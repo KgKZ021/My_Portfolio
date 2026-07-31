@@ -1,0 +1,94 @@
+// ==========================================
+// Base Reset & Sci-Fi Background / Scanlines
+// ==========================================
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: $bg-dark;
+  color: $text-main;
+  font-family: $font-body;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: $bg-dark;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba($cyan-primary, 0.4);
+  border-radius: 4px;
+  &:hover {
+    background: $cyan-primary;
+    box-shadow: 0 0 10px $cyan-primary;
+  }
+}
+
+// Background Grid Canvas
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+// Cyber Scanline Overlay
+.scanline-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  opacity: 0.6;
+}
+
+// Ambient HUD Glow
+.ambient-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba($cyan-primary, 0.08) 0%, transparent 70%);
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: floatGlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-45%, -40%) scale(1.2); }
+  100% { transform: translate(-55%, -55%) scale(0.9); }
+}
+
+section {
+  position: relative;
+  z-index: 2;
+  padding: 5rem 1.5rem;
+}

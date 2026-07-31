@@ -2,34 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaung Khant Zaw | Game Developer & CS Graduate</title>
+    
+    <!-- Google Fonts: Orbitron, Rajdhani, Chakra Petch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <!-- Animate.css -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <!-- Custom Cyber/Sci-Fi Theme CSS -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="dark-theme section">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg px-3">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="#">🎮 My Portfolio</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#fancyNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="fancyNav">
+  <body>
+    <!-- Background Canvas & Effects -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="scanline-overlay"></div>
+    <div class="ambient-glow"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-cyber fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home">
+          <i class="bi bi-controller brand-icon"></i> KKZ_SYSTEM // PORTFOLIO
+        </a>
+        <div class="d-flex align-items-center gap-3">
+          <div class="status-pill d-none d-sm-inline-flex">
+            <span class="status-dot"></span> AVAILABLE FOR HIRE
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#cyberNav"
+            aria-controls="cyberNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="cyberNav">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" href="#home">Home</a>
@@ -38,17 +65,16 @@
               <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#projects">Portfolio</a>
+              <a class="nav-link" href="#skills">Skills & Certs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#academics">Education</a>
+              <a class="nav-link" href="#experience">Experience</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#favourites">Hobbies</a>
+              <a class="nav-link" href="#projects">Projects</a>
             </li>
-            <li class="nav-item theme-switch ps-3">
-              <label class="form-check-label text-light" for="themeToggle">🌙</label>
-              <input class="form-check-input" type="checkbox" id="themeToggle" />
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
             </li>
           </ul>
         </div>
@@ -56,159 +82,336 @@
     </nav>
 
     <main>
-      <section
-        id="home"
-        class="home-section section d-flex align-items-center justify-content-center"
-      >
-        <div class="section-wrapper home-content text-center">
-          <h1 class="intro-title">
-            Hey, I'm <span class="highlight">Kaung Khant Zaw</span>
-          </h1>
-          <p class="intro-subtitle">A Passionate Web Developer & Designer</p>
-          <button
-            id="scrollDown"
-            class="scroll-btn mt-4 animate__animated animate__bounce animate__infinite"
-          >
-            ↓ Scroll Down
-          </button>
-          <div class="animated-shapes">
-            <div class="circle animate__animated animate__pulse animate__infinite"></div>
-            <div
-              class="triangle animate__animated animate__fadeInDown animate__slower animate__infinite"
-            ></div>
-            <div
-              class="square animate__animated animate__rotateIn animate__slower animate__infinite"
-            ></div>
+      <!-- Hero Section -->
+      <section id="home" class="hero-section">
+        <div class="container">
+          <div class="hero-content animate__animated animate__fadeIn">
+            <p class="hero-subtitle-top">> INITIALIZING PLAYER PROFILE...</p>
+            <h1 class="hero-title">
+              HEARING / BUILDING AS <span class="name-gradient">KAUNG KHANT ZAW</span>
+            </h1>
+            <div class="typing-container">
+              <span class="typing-text"></span><span class="typing-cursor">_</span>
+            </div>
+            
+            <div class="hero-quick-info">
+              <div class="info-item">
+                <i class="bi bi-geo-alt-fill"></i> Debrecen, Hungary
+              </div>
+              <div class="info-item">
+                <i class="bi bi-envelope-fill"></i> kaungkhantzaw011@gmail.com
+              </div>
+              <div class="info-item">
+                <i class="bi bi-telephone-fill"></i> +36 20 617 6033
+              </div>
+            </div>
+
+            <div class="hero-cta">
+              <a href="#projects" class="btn-cyber">
+                <i class="bi bi-code-slash"></i> View Projects
+              </a>
+              <a href="mailto:kaungkhantzaw011@gmail.com" class="btn-cyber-outline">
+                <i class="bi bi-send-fill"></i> Contact Me
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section
-        id="about"
-        class="about-section section d-flex align-items-center justify-content-center"
-      >
-        <div
-          class="section-wrapper about-content text-center animate__animated animate__fadeInUp"
-        >
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="container">
           <h2 class="section-title">About Me</h2>
-          <p class="section-description">
-            Hi! I’m currently studying Computer Science (BSc) at the University
-            of Debrecen. I’m really passionate about game development and
-            programming, and I love bringing ideas to life through code.
-            Whether it’s creating gameplay mechanics, working on 3D
-            environments, or just learning something new, I’m always excited to
-            dive into the world of tech and games.
-          </p>
-          <div class="animated-decor">
-            <div class="decor-circle"></div>
-            <div class="decor-wave"></div>
-            <div class="decor-glow"></div>
+          <p class="section-subtitle">Player Profile & Background</p>
+
+          <div class="hud-card player-card">
+            <div class="player-avatar-hud">
+              <i class="bi bi-person-bounding-box avatar-icon"></i>
+              <div class="player-level">LVL 22 // CS GRADUATE</div>
+            </div>
+            <div class="player-bio">
+              <p class="bio-text">
+                Bachelor's graduate in Computer Science with practical experience in software development, web technologies, and game development. Skilled in C#, Java, Unity, SQL, and Git, with a strong understanding of OOP, data structures, and databases. Actively seeking junior or graduate-level IT and software engineering roles.
+              </p>
+              <div class="stat-attributes">
+                <div class="attribute-box">
+                  <div class="attr-label">Specialization</div>
+                  <div class="attr-val">Game Dev / Software</div>
+                </div>
+                <div class="attribute-box">
+                  <div class="attr-label">Primary Engine</div>
+                  <div class="attr-val">Unity (C#)</div>
+                </div>
+                <div class="attribute-box">
+                  <div class="attr-label">Degree Target</div>
+                  <div class="attr-val">BSc Computer Science</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section
-        id="projects"
-        class="projects-section section py-5 text-center"
-      >
-      
-        <div class="section-wrapper container">
-          <h2 class="section-title mb-4">My Projects</h2>
-          <p class="section-description mb-5">
-            Explore some of my work with previews and GitHub links.
-          </p>
+      <!-- Skills & Certifications Section -->
+      <section id="skills" class="skills-section">
+        <div class="container">
+          <h2 class="section-title">Technical Specs</h2>
+          <p class="section-subtitle">Core Tech Stack & Certifications</p>
+
+          <div class="row g-4 mb-5">
+            <!-- Programming Languages -->
+            <div class="col-md-6 col-lg-3">
+              <div class="hud-card skill-category-card">
+                <div class="category-header">
+                  <i class="bi bi-code-square"></i>
+                  <h3>Languages</h3>
+                </div>
+                <div class="skill-tags-wrapper">
+                  <span class="tech-tag">C#</span>
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">C++</span>
+                  <span class="tech-tag">C</span>
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Game Development -->
+            <div class="col-md-6 col-lg-3">
+              <div class="hud-card skill-category-card">
+                <div class="category-header">
+                  <i class="bi bi-controller"></i>
+                  <h3>Game Dev</h3>
+                </div>
+                <div class="skill-tags-wrapper">
+                  <span class="tech-tag">Unity</span>
+                  <span class="tech-tag">Lua</span>
+                  <span class="tech-tag">ML-Agents</span>
+                  <span class="tech-tag">Gameplay Logic</span>
+                  <span class="tech-tag">UI/UX Mechanics</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="col-md-6 col-lg-3">
+              <div class="hud-card skill-category-card">
+                <div class="category-header">
+                  <i class="bi bi-database-fill"></i>
+                  <h3>Databases</h3>
+                </div>
+                <div class="skill-tags-wrapper">
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">Oracle</span>
+                  <span class="tech-tag">SQL</span>
+                  <span class="tech-tag">Data Modeling</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tools & Platforms -->
+            <div class="col-md-6 col-lg-3">
+              <div class="hud-card skill-category-card">
+                <div class="category-header">
+                  <i class="bi bi-tools"></i>
+                  <h3>Tools & Cloud</h3>
+                </div>
+                <div class="skill-tags-wrapper">
+                  <span class="tech-tag">Git</span>
+                  <span class="tech-tag">Atlassian Jira</span>
+                  <span class="tech-tag">AWS</span>
+                  <span class="tech-tag">Microsoft Azure</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications Grid -->
+          <h3 class="text-center font-tech mb-4" style="color: var(--cyan-primary, #00f3ff);">// CERTIFICATIONS & BADGES</h3>
+          <div class="certifications-grid">
+            <div class="cert-item">
+              <div class="cert-icon"><i class="bi bi-patch-check-fill"></i></div>
+              <div class="cert-details">
+                <h4>Unity Certified User: Programmer</h4>
+                <p>Unity Technologies</p>
+              </div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon"><i class="bi bi-patch-check-fill"></i></div>
+              <div class="cert-details">
+                <h4>Microsoft Certified Azure Fundamentals</h4>
+                <p>AZ-900 | Microsoft</p>
+              </div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon"><i class="bi bi-patch-check-fill"></i></div>
+              <div class="cert-details">
+                <h4>IT Specialist: Java</h4>
+                <p>Pearson / Certiport</p>
+              </div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon"><i class="bi bi-patch-check-fill"></i></div>
+              <div class="cert-details">
+                <h4>IT Specialist: HTML & CSS</h4>
+                <p>Pearson / Certiport</p>
+              </div>
+            </div>
+            <div class="cert-item">
+              <div class="cert-icon"><i class="bi bi-trophy-fill"></i></div>
+              <div class="cert-details">
+                <h4>i-Days Hackathon Participation</h4>
+                <p>EIT Health Innovation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Professional Experience Section -->
+      <section id="experience" class="experience-section">
+        <div class="container">
+          <h2 class="section-title">Experience Log</h2>
+          <p class="section-subtitle">Professional Career History</p>
+
+          <div class="cyber-timeline">
+            <div class="timeline-node">
+              <div class="hud-card">
+                <div class="exp-header">
+                  <div>
+                    <h3 class="exp-title">Web Development Trainee</h3>
+                    <div class="exp-company">Lime Light Renhold</div>
+                  </div>
+                  <div class="exp-date">March 2025 – May 2025</div>
+                </div>
+                <ul class="exp-bullet-list">
+                  <li>Developed multiple responsive web pages using HTML, CSS, and basic JavaScript.</li>
+                  <li>Implemented front-end layouts following design requirements and usability standards.</li>
+                  <li>Collaborated on cross-browser testing and responsive layout adjustments.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects Section -->
+      <section id="projects" class="projects-section">
+        <div class="container">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Game Development & Software Engineering Works</p>
 
           <div class="row g-4">
-
-            <div class="col-md-4 d-flex">
-              <div class="project-card shadow-lg rounded overflow-hidden animate__animated h-100 d-flex flex-column">
-                <video autoplay muted loop playsinline class="w-100 media-thumb">
-                  <source src="Resources/Fantasia.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                <div class="project-body p-3">
-                  <h5 class="fw-bold">Fantasia</h5>
-                  <p class="small">
-                    A unity project on a rogue-like idle game.
-                    Also a thesis project for my course work.
+            <!-- Project 1: Fantasia -->
+            <div class="col-md-6 col-lg-3">
+              <div class="project-hud-card">
+                <div class="project-media-container">
+                  <video autoplay muted loop playsinline>
+                    <source src="Resources/Fantasia.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <span class="media-badge">Unity / Thesis</span>
+                </div>
+                <div class="project-content">
+                  <h4 class="project-title">Fantasia</h4>
+                  <p class="project-description">
+                    Implemented core idle and incremental gameplay systems including player movement, enemy spawning, weapon management, inventory system, and power-ups.
                   </p>
-                  <a
-                    href="https://github.com/KgKZ021/Fantasia.git"
-                    target="_blank"
-                    class="btn btn-outline-info btn-sm mt-2"
-                    >View on GitHub</a
-                  >
+                  <div class="project-tech-stack">
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">Unity</span>
+                    <span class="tech-tag">Idle Systems</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/KgKZ021/Fantasia.git" target="_blank" class="btn-cyber-outline w-100 text-center">
+                      <i class="bi bi-github"></i> GitHub
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-4 d-flex">
-              <div class="project-card shadow-lg rounded overflow-hidden animate__animated h-100 d-flex flex-column">
-                <video autoplay muted loop playsinline class="w-100 media-thumb">
-                  <source src="Resources/CooKitchen.mov" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                <div class="project-body p-3">
-                  <h5 class="fw-bold">CooKitchen</h5>
-                  <p class="small">
-                    A pet project on creating 3D game with Unity. Heavily
-                    inspired by Code Monkey.
-                  </p>
-                  <a
-                    href="https://github.com/KgKZ021/CooKitchen.git"
-                    target="_blank"
-                    class="btn btn-outline-info btn-sm mt-2"
-                    >View on GitHub</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 d-flex">
-              <div class="project-card shadow-lg rounded overflow-hidden animate__animated h-100 d-flex flex-column">
-                <div class="project-media media-thumb">
-                  <img
-                    src="Resources/JiraApp.png"
-                    alt="Custom Field Statistics Forge App"
-                    class="img-fluid"
-                  />
-                </div>
-                <div class="project-body p-3">
-                  <h5 class="fw-bold">Custom Field Statistics Forge App</h5>
-                  <p class="small">
-                    A team project on course work. A Jira Forge App enhancing
-                    custom fields on a per-project basis.
-                  </p>
-                  <a
-                    href="https://github.com/DO8FEC/Forge-Custom-Field-Statistics.git"
-                    target="_blank"
-                    class="btn btn-outline-info btn-sm mt-2"
-                    >View on GitHub</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4 d-flex">
-              <div class="project-card shadow-lg rounded overflow-hidden animate__animated h-100 d-flex flex-column">
-                <div class="project-media">
-                  <video autoplay muted loop playsinline class="w-100 media-thumb">
+            <!-- Project 2: Shield Wizard (RL) -->
+            <div class="col-md-6 col-lg-3">
+              <div class="project-hud-card">
+                <div class="project-media-container">
+                  <video autoplay muted loop playsinline>
                     <source src="Resources/RLProj.mov" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
+                  <span class="media-badge">ML-Agents</span>
                 </div>
-                <div class="project-body p-3">
-                  <h5 class="fw-bold">Shield Wizard</h5>
-                  <p class="small">
-                    A course work project on reinforcement learning. Training
-                    the agent to shield and counter attack the wizard.
+                <div class="project-content">
+                  <h4 class="project-title">Shield Wizard (RL)</h4>
+                  <p class="project-description">
+                    Implemented and trained reinforcement learning agents using Unity ML-Agents. Explored reward functions, agent behavior tuning, and environment design.
                   </p>
-                  <a
-                    href="https://github.com/Hosy-dotcom/ShieldWizard.git"
-                    target="_blank"
-                    class="btn btn-outline-info btn-sm mt-2"
-                    >View on GitHub</a
-                  >
+                  <div class="project-tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Unity ML-Agents</span>
+                    <span class="tech-tag">AI</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/Hosy-dotcom/ShieldWizard.git" target="_blank" class="btn-cyber-outline w-100 text-center">
+                      <i class="bi bi-github"></i> GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: Jira Forge Application -->
+            <div class="col-md-6 col-lg-3">
+              <div class="project-hud-card">
+                <div class="project-media-container">
+                  <img src="Resources/JiraApp.png" alt="Jira Forge App" />
+                  <span class="media-badge">Atlassian Forge</span>
+                </div>
+                <div class="project-content">
+                  <h4 class="project-title">Jira Forge App</h4>
+                  <p class="project-description">
+                    Developed a custom Jira Forge application to extend custom issue statistics and improve project tracking functionality.
+                  </p>
+                  <div class="project-tech-stack">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Atlassian Forge</span>
+                    <span class="tech-tag">REST API</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/DO8FEC/Forge-Custom-Field-Statistics.git" target="_blank" class="btn-cyber-outline w-100 text-center">
+                      <i class="bi bi-github"></i> GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4: CooKitchen -->
+            <div class="col-md-6 col-lg-3">
+              <div class="project-hud-card">
+                <div class="project-media-container">
+                  <video autoplay muted loop playsinline>
+                    <source src="Resources/CooKitchen.mov" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <span class="media-badge">3D Unity</span>
+                </div>
+                <div class="project-content">
+                  <h4 class="project-title">CooKitchen</h4>
+                  <p class="project-description">
+                    Unity project focusing on gameplay mechanics and UI interaction. Heavily inspired by Code Monkey architectural patterns.
+                  </p>
+                  <div class="project-tech-stack">
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">Unity</span>
+                    <span class="tech-tag">3D Physics</span>
+                  </div>
+                  <div class="project-actions">
+                    <a href="https://github.com/KgKZ021/CooKitchen.git" target="_blank" class="btn-cyber-outline w-100 text-center">
+                      <i class="bi bi-github"></i> GitHub
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -216,143 +419,32 @@
         </div>
       </section>
 
-      <section
-        id="academics"
-        class="academics-section section py-5 text-center"
-      >
-        <div class="section-wrapper container">
-          <h2 class="section-title mb-4">Academic Journey</h2>
-          <p class="section-description mb-5">
-            Here’s how I evolved from a curious student to a passionate
-            developer.
-          </p>
-          <div class="timeline">
-            <div
-              class="timeline-item animate__animated"
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              title="Gained all necessary fundamentals of computer science"
-            >
-              <div class="timeline-dot media-thumb">
-                <i class="bi bi-mortarboard-fill svg-icon"></i>
-              </div>
-              <div class="timeline-content">
-                <h5 class="fw-bold">Bachelor's in Computer Science</h5>
-                <p class="small">
-                  University of Information and Technology Yangon (2018 - 2022)
-                </p>
-                <p class="">
-                  Focused on fundamentals of Computer Science and Programming,
-                  Physics, Mathematics and Electronics
-                </p>
-              </div>
-            </div>
+      <!-- Education Section -->
+      <section id="education" class="education-section">
+        <div class="container">
+          <h2 class="section-title">Academic Journey</h2>
+          <p class="section-subtitle">University & Relevant Coursework</p>
 
-            <div
-              class="timeline-item animate__animated"
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              title="Joined University of debrecen and actively learning"
-            >
-              <div class="timeline-dot media-thumb">
-                <i class="bi bi-briefcase-fill svg-icon"></i>
-              </div>
-              <div class="timeline-content">
-                <h5 class="fw-bold">Bachelor's in Science (Computer Science)</h5>
-                <p class="small">University of Debrecen(2022 - Current)</p>
-                <p class="">
-                  Actively learning programming and software development.
-                  Participated in coding events, interned, and built various
-                  mini-projects.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="timeline-item animate__animated"
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              title="Fantasia: Developing in Unity using C#,incremental mechanics"
-            >
-              <div class="timeline-dot media-thumb">
-                <i class="bi bi-controller svg-icon"></i>
-              </div>
-              <div class="timeline-content">
-                <h5 class="fw-bold">Thesis Project : Fantasia</h5>
-                <p class="small">Final Year</p>
-                <p class="">
-                  Creating a 3D fantasy themed idle game with time loop
-                  mechanics, and Unity engine.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="favourites"
-        class="favourites-section section py-5 text-center parallax-section"
-      >
-        <div class="section-wrapper container position-relative z-1">
-          <h2 class="section-title mb-4">My Favourites</h2>
-          <p class="section-description mb-5">
-            Things I love to do in my free time!
-          </p>
-          <div class="row justify-content-center g-4">
-            <div class="col-md-3">
-              <div
-                class="favourite-card p-4 rounded shadow-lg animate__animated animate__zoomIn"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                title="I create 2D/3D games using Unity and C#!"
-              >
-                <div class="media-thumb mb-3">
-                  <i class="bi bi-controller svg-icon"></i>
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="education-card hud-card">
+                <div class="edu-icon">
+                  <i class="bi bi-mortarboard-fill"></i>
                 </div>
-                <h5 class="fw-bold no-wrap text-truncate">Game Development</h5>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div
-                class="favourite-card p-4 rounded shadow-lg animate__animated animate__zoomIn"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                title="Books and online articles are my go-to!"
-              >
-                <div class="media-thumb mb-3">
-                  <i class="bi bi-book svg-icon"></i>
+                <h3 class="edu-degree">BSc in Computer Science</h3>
+                <div class="edu-institution">University of Debrecen, Hungary</div>
+                <div class="edu-period">2022 – 2026</div>
+                <p class="text-muted mt-3">
+                  Relevant Coursework & Core Focus:
+                </p>
+                <div class="coursework-list">
+                  <span class="tech-tag">Data Structures & Algorithms</span>
+                  <span class="tech-tag">Object-Oriented Programming</span>
+                  <span class="tech-tag">Operating Systems</span>
+                  <span class="tech-tag">Software Development</span>
+                  <span class="tech-tag">Web Development</span>
+                  <span class="tech-tag">Database Management</span>
                 </div>
-                <h5 class="fw-bold">Reading</h5>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div
-                class="favourite-card p-4 rounded shadow-lg animate__animated animate__zoomIn"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                title="I love exploring immersive game worlds."
-              >
-                <div class="media-thumb mb-3">
-                  <i class="bi bi-joystick svg-icon"></i>
-                </div>
-                <h5 class="fw-bold">Video Games</h5>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div
-                class="favourite-card p-4 rounded shadow-lg animate__animated animate__zoomIn"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                title="Exploring new cultures & places."
-              >
-                <div class="media-thumb mb-3">
-                  <i class="bi bi-geo-alt-fill svg-icon"></i>
-                </div>
-                <h5 class="fw-bold">Travelling</h5>
               </div>
             </div>
           </div>
@@ -360,58 +452,29 @@
       </section>
     </main>
 
-    <footer class="site-footer py-4 px-3 mt-auto bg-dark text-light">
-      <div
-        class="container d-flex flex-column flex-md-row justify-content-between align-items-center"
-      >
-        <div class="footer-left mb-3 mb-md-0">
-          <p class="mb-1">
-            &copy; <span id="footer-year"></span> Kaung Khant Zaw. All rights
-            reserved.
-          </p>
-          <p class="small">Built with 💻 and ☕</p>
+    <!-- Footer -->
+    <footer class="footer-cyber">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>KAUNG KHANT ZAW // 2026</h3>
+          <p>Computer Science Graduate & Game Developer</p>
         </div>
-        <div class="footer-center mb-3 mb-md-0">
-          <a
-            href="mailto:kaungkhantzaw011@gmail.com"
-            class="text-light me-3"
-            data-bs-toggle="tooltip"
-            title="Email"
-          >
-            <i class="bi bi-envelope-fill"></i>
-          </a>
-          <a
-            href="https://github.com/KgKZ021"
-            class="text-light me-3"
-            data-bs-toggle="tooltip"
-            title="GitHub"
-          >
-            <i class="bi bi-github"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/kaung-khant-zaw021"
-            class="text-light"
-            data-bs-toggle="tooltip"
-            title="LinkedIn"
-          >
-            <i class="bi bi-linkedin"></i>
-          </a>
+        <div class="footer-socials">
+          <a href="mailto:kaungkhantzaw011@gmail.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
+          <a href="https://github.com/KgKZ021" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/kaung-khant-zaw021" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
         </div>
-        <div class="footer-right">
-          <button
-            id="backToTop"
-            class="btn btn-outline-light btn-sm"
-            data-bs-toggle="tooltip"
-            title="Back to top"
-          >
-            <i class="bi bi-arrow-up-circle-fill"></i>
+        <div class="footer-actions">
+          <button id="backToTop">
+            <i class="bi bi-arrow-up"></i> BACK TO TOP
           </button>
         </div>
       </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/script.js"></script>
+    <!-- Main ES Module Script -->
+    <script type="module" src="js/script.js"></script>
   </body>
 </html>

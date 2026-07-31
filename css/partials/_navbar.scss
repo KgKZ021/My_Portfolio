@@ -1,0 +1,75 @@
+// ==========================================
+// Navbar SCSS - Cyber Header Navigation
+// ==========================================
+
+.navbar-cyber {
+  background: $bg-nav;
+  backdrop-filter: blur(16px);
+  border-bottom: $hud-border;
+  padding: 0.8rem 1.5rem;
+  transition: all $transition-smooth;
+
+  .navbar-brand {
+    font-family: $font-hud;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: $text-bright;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+
+    .brand-icon {
+      color: $cyan-primary;
+      filter: drop-shadow(0 0 6px $cyan-primary);
+    }
+
+    &:hover {
+      color: $cyan-primary;
+    }
+  }
+
+  .nav-link {
+    font-family: $font-tech;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: $text-muted;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem !important;
+    position: relative;
+    transition: all $transition-fast;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: $cyan-primary;
+      transition: all $transition-fast;
+      transform: translateX(-50%);
+      box-shadow: 0 0 8px $cyan-primary;
+    }
+
+    &:hover, &.active {
+      color: $cyan-primary !important;
+      
+      &::after {
+        width: 80%;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border: 1px solid $cyan-primary;
+    color: $cyan-primary;
+    padding: 0.4rem 0.6rem;
+    border-radius: 2px;
+
+    &:focus {
+      box-shadow: 0 0 10px $cyan-primary;
+    }
+  }
+}

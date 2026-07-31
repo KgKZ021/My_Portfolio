@@ -1,0 +1,169 @@
+// ==========================================
+// Reusable Sci-Fi Components & HUD Frames
+// ==========================================
+
+// HUD Frame Container with Corner Bracket Accents
+.hud-card {
+  background: $bg-card;
+  backdrop-filter: blur(12px);
+  border: $hud-border;
+  border-radius: 4px;
+  position: relative;
+  padding: 1.75rem;
+  transition: all $transition-smooth;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  // Corner brackets (Sleek Sci-Fi Reticles)
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: $cyan-primary;
+    border-style: solid;
+    pointer-events: none;
+    transition: all $transition-smooth;
+  }
+
+  &::before {
+    top: -1px;
+    left: -1px;
+    border-width: 2px 0 0 2px;
+  }
+
+  &::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 2px 2px 0;
+  }
+
+  &:hover {
+    border-color: rgba($cyan-primary, 0.8);
+    box-shadow: 0 0 25px rgba($cyan-primary, 0.25);
+    transform: translateY(-4px);
+
+    &::before, &::after {
+      border-color: $neon-green;
+      box-shadow: 0 0 6px $neon-green;
+    }
+  }
+}
+
+// Glowing Cyber Button
+.btn-cyber {
+  font-family: $font-hud;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: $cyan-primary;
+  background: transparent;
+  border: 1px solid $cyan-primary;
+  padding: 0.65rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all $transition-fast;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba($cyan-primary, 0.2);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba($cyan-primary, 0.3), transparent);
+    transition: all 0.5s ease;
+  }
+
+  &:hover {
+    color: #000;
+    background: $cyan-primary;
+    box-shadow: 0 0 20px $cyan-primary;
+    border-color: $cyan-primary;
+
+    &::before {
+      left: 100%;
+    }
+  }
+}
+
+.btn-cyber-outline {
+  font-family: $font-tech;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $text-main;
+  background: rgba($bg-dark, 0.6);
+  border: 1px solid rgba($cyan-primary, 0.4);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  transition: all $transition-fast;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  &:hover {
+    color: $cyan-primary;
+    border-color: $cyan-primary;
+    box-shadow: 0 0 12px rgba($cyan-primary, 0.3);
+    background: rgba($cyan-primary, 0.1);
+  }
+}
+
+// Tech Skill Badges
+.tech-tag {
+  display: inline-block;
+  font-family: $font-tech;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  padding: 0.25rem 0.6rem;
+  background: rgba($cyan-primary, 0.08);
+  border: 1px solid rgba($cyan-primary, 0.3);
+  color: $cyan-primary;
+  border-radius: 2px;
+  margin: 0.2rem;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: rgba($cyan-primary, 0.25);
+    border-color: $cyan-primary;
+    box-shadow: 0 0 8px rgba($cyan-primary, 0.4);
+  }
+}
+
+// Status Indicator Pill
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: $font-tech;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  background: rgba(0, 255, 102, 0.1);
+  border: 1px solid rgba(0, 255, 102, 0.4);
+  color: $neon-green;
+  border-radius: 20px;
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: $neon-green;
+    border-radius: 50%;
+    box-shadow: 0 0 8px $neon-green;
+    animation: blink 1.5s infinite;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}

@@ -1,0 +1,100 @@
+// ==========================================
+// Professional Experience & Timeline SCSS
+// ==========================================
+
+.experience-section {
+  .cyber-timeline {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    padding-left: 2rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, $cyan-primary, $neon-green, rgba($cyan-primary, 0.2));
+      box-shadow: 0 0 10px $cyan-primary;
+    }
+
+    .timeline-node {
+      position: relative;
+      margin-bottom: 2.5rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -2.4rem;
+        top: 1.5rem;
+        width: 14px;
+        height: 14px;
+        background-color: $bg-dark;
+        border: 2px solid $cyan-primary;
+        border-radius: 50%;
+        box-shadow: 0 0 10px $cyan-primary;
+        z-index: 2;
+      }
+
+      &:hover::before {
+        background-color: $neon-green;
+        border-color: $neon-green;
+        box-shadow: 0 0 15px $neon-green;
+      }
+
+      .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+
+        .exp-title {
+          font-size: 1.25rem;
+          color: $cyan-primary;
+          margin: 0;
+        }
+
+        .exp-company {
+          font-family: $font-tech;
+          font-size: 1rem;
+          color: $text-bright;
+          font-weight: 700;
+        }
+
+        .exp-date {
+          font-family: $font-tech;
+          font-size: 0.85rem;
+          color: $neon-green;
+          background: rgba($neon-green, 0.1);
+          border: 1px solid rgba($neon-green, 0.3);
+          padding: 0.2rem 0.6rem;
+          border-radius: 2px;
+        }
+      }
+
+      .exp-bullet-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 1rem;
+
+        li {
+          position: relative;
+          padding-left: 1.5rem;
+          margin-bottom: 0.5rem;
+          color: $text-main;
+
+          &::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: $cyan-primary;
+          }
+        }
+      }
+    }
+  }
+}

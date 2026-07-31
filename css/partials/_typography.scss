@@ -1,0 +1,60 @@
+// ==========================================
+// Typography SCSS - Sci-Fi HUD Fonts
+// ==========================================
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-hud;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: $text-bright;
+}
+
+.text-cyber {
+  color: $cyan-primary;
+  text-shadow: 0 0 10px rgba($cyan-primary, 0.6);
+}
+
+.text-neon {
+  color: $neon-green;
+  text-shadow: 0 0 10px rgba($neon-green, 0.6);
+}
+
+.text-magenta {
+  color: $magenta-accent;
+  text-shadow: 0 0 10px rgba($magenta-accent, 0.6);
+}
+
+.font-tech {
+  font-family: $font-tech;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, $cyan-primary, $neon-green);
+    margin: 8px auto 0;
+    box-shadow: 0 0 8px $cyan-primary;
+  }
+}
+
+.section-subtitle {
+  text-align: center;
+  color: $text-muted;
+  font-family: $font-tech;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
